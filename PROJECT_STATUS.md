@@ -1,6 +1,6 @@
 # Project Status
 
-Personal portfolio for **Prasad Tawde**, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Originally scaffolded from a Claude Design handoff (`Portfolio.dc.html` / `Portfolio Loader B.dc.html`), then ported to real React components and populated with real content from a resume.
+Personal portfolio for **Prasad Tawde**, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Originally scaffolded from a design prototype handoff (`Portfolio.dc.html` / `Portfolio Loader B.dc.html`), then ported to real React components and populated with real content from a resume.
 
 Last updated: 2026-09-11 (console-warning fixes, project-detail refactor, Discord card added).
 
@@ -40,7 +40,7 @@ No component code needs touching to update copy, swap projects, or change identi
 
 ## What's been done
 
-**Design system port** — Recreated the approved Claude Design prototype pixel-for-pixel in React/Tailwind: 5-palette color system (`PaletteContext` + `lib/palettes.ts`), custom circle cursor, ambient background layers (grain, tint washes, hairline grid), scroll-driven section reveals, hero parallax.
+**Design system port** — Recreated the approved design prototype pixel-for-pixel in React/Tailwind: 5-palette color system (`PaletteContext` + `lib/palettes.ts`), custom circle cursor, ambient background layers (grain, tint washes, hairline grid), scroll-driven section reveals, hero parallax.
 
 **"Name Set" intro loader** (`IntroLoader.tsx` + `hooks/useIntroStep.ts`) — Full-screen veil that shows the current route's name/title, holds, then lifts away to reveal the page underneath. Runs once per hard page load/reload (module-level state resets on real navigation, survives client-side routing), route-aware label (home shows the site name, `/projects` shows "Projects", a project page shows its own title), skips straight to the revealed state under `prefers-reduced-motion`.
 
@@ -93,7 +93,7 @@ Nothing is broken — these are content/polish items, mostly ones already flagge
 - [ ] **Project years** — both projects are dated 2026 per instruction; confirm this is accurate per-project if it matters later.
 - [ ] **`detailImage` per project** — both projects currently reuse their card `image` as the detail-page hero shot too; add a separate, larger screenshot per project if desired.
 - [ ] **Work history density** — all 4 roles are separate rows under the same company name (a full promotion trail); consider condensing the two Junior titles into one row if the repetition reads oddly.
-- [ ] **Per-role tech stack tags** (`content/work.ts`) — inferred by Claude from each role's description (the resume only lists one overall skill set, not per-role); spot-check these.
+- [ ] **Per-role tech stack tags** (`content/work.ts`) — inferred from each role's description (the resume only lists one overall skill set, not per-role); spot-check these.
 - [ ] **Asset size** — `public/profile.png` is ~1.6MB. `next/image` serves optimized/resized versions at request time regardless, so this doesn't hurt production performance, but a pre-compressed source would shrink the repo/deploy footprint.
 - [x] ~~Phone number~~ — intentionally left off the site.
 - [ ] **Deploy the site** — `prasadtawde.dev` is registered and resolving, but currently serves a generic "under maintenance" placeholder, not this codebase (checked live 2026-09-11). Needs an actual deploy (Vercel is the zero-config fit for Next.js) pointed at that domain before anything SEO-related below can do anything.
