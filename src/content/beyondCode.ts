@@ -76,9 +76,8 @@ const BEYOND_DESTINATIONS: BeyondDestination[] = [
     platform: "Discord",
     title: "Where everyone actually hangs out",
     body: "The server is the real room: chat during streams, people organising games, and a channel where nobody stays on topic. Open to anyone who watches.",
-    // TODO: real invite link + member count — see the file-level TODO above.
     meta: [],
-    cta: { label: "Join Discord", href: "#" },
+    cta: { label: "Join Discord", href: "https://discord.gg/kPwGyw56p2" },
   },
 ];
 
